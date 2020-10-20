@@ -1,6 +1,6 @@
 #C:\Users\Snehanshu Raj\Downloads\chromedriver_win32\chromedriver.exe
 
-import mysql.connector
+import database_handler
 from selenium import webdriver
 import requests
 import time
@@ -105,7 +105,6 @@ if(logged_in == True):
         if(len(f_name.get_attribute('title')) > 0):
             followers_list.append(f_name.get_attribute('title'))
     print(followers_list)
-    print(len(followers_list))
 
     #accessing followings
     driver.get(main_page_url)
@@ -129,9 +128,9 @@ if(logged_in == True):
         if(len(f_name.get_attribute('title')) > 0):
             followings_list.append(f_name.get_attribute('title'))
     print(followings_list)
-    print(len(followings_list))
 
-    print("Not Follow back: ")
-    print(set(followings_list) - set(followers_list))
+    #updating user info
+    database_handler.updating_user_info(user_id, followers_list, followings_list)
+
 else:
     print("Logged in fail!! Please try again with valid credentials")

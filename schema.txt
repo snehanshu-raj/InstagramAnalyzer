@@ -1,0 +1,15 @@
+create database instagram;
+
+use instagram;
+
+create table users
+(
+    user_id varchar(100) primary key
+);
+
+create table follower_following
+(
+    follower_id varchar(100),
+    following_id varchar(100),
+    primary key (follower_id, following_id)
+);
