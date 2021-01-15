@@ -19,7 +19,7 @@ logged_in = False
 
 time.sleep(2)
 user_id = input("Enter username or phone number: ")
-driver.find_element_by_xpath('/html/body/div[1]/section/main/div/article/div/div[1]/div/form/div/div[1]/div/label/input').send_keys(user_id)
+driver.find_element_by_xpath('/html/body/div[1]/section/main/div/div/div[1]/div/form/div/div[1]/div/label/input').send_keys(user_id)
 
 time.sleep(2)
 password = getpass.getpass()
