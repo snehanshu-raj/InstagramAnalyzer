@@ -103,7 +103,7 @@ if(logged_in == True):
         driver.execute_script('arguments[0].scrollTop = arguments[0].scrollTop + arguments[0].offsetHeight;', fBody)
         time.sleep(2)
 
-    a_list = driver.find_elements_by_tag_name('a')
+    a_list = fBody.find_elements_by_tag_name('a')
     followers_list = []
 
     for i in tqdm(range(len(a_list)), desc="Updating your followers data"):
